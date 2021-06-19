@@ -3,6 +3,7 @@
     background-size: cover;
     height: 100vh;
     position: relative;
+    background-attachment: fixed;
     &:before{
         content: '';
         position: absolute;
