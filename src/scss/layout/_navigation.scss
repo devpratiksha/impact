@@ -1,0 +1,51 @@
+.#{$prefix}-header{
+    background-color:rgba(0,0,0,0.6);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    .site-logo{
+        font-size: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $color_white;
+        i{
+            margin-right: 8px;
+        }
+    }
+    .site-navigation{
+        ul{
+            @include flex-end;
+            li{
+                a{
+                    text-transform: uppercase;
+                    padding: 0 20px;
+                    color: $color_white;
+                    position: relative;
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        bottom:0;
+                        left: 0;
+                        height: 2px;
+                        width: 100%;
+                        background-color:$color_white;
+                        @include transition(0.3s);
+                        opacity: 0;
+                    }
+                    &:hover{
+                        &:after{
+                            bottom: -10px;
+                            opacity: 1;
+                        }
+                    }
+                }
+                &:last-child{
+                    a{
+                      padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

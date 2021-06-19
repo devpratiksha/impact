@@ -7,6 +7,7 @@ const minify = require('gulp-clean-css');
 const terser = require('gulp-terser');
 const imagemin = require('gulp-imagemin');
 const imagewebp = require('gulp-webp');
+const webfont = require('gulp-ttf2woff');
 
 //compile, prefix, and min scss
 function compilescss() {
@@ -28,11 +29,18 @@ function optimizeimg() {
 };
 
 //optimize and move images
-function webpImage() {
+ function webpImage() {
   return src('dist/images/*.{jpg,png}') // change to your source directory
-    .pipe(imagewebp())
-    .pipe(dest('dist/images')) // change to your final/public directory
-};
+     .pipe(imagewebp())
+     .pipe(dest('dist/images')) // change to your final/public directory
+ };
+
+ //ttf fonts to woff fonts
+ function webFont() {
+    return src('src/fonts/*.ttf') // change to your source directory
+       .pipe(webfont())
+       .pipe(dest('dist/fonts')) // change to your final/public directory
+   };
 
 
 // minify js
@@ -47,7 +55,8 @@ function watchTask(){
   watch('src/scss/**/*.scss', compilescss); // change to your source directory
   watch('src/js/*.js', jsmin); // change to your source directory
   watch('src/images/*', optimizeimg); // change to your source directory
-  watch('dist/images/*.{jpg,png}', webpImage); // change to your source directory
+  watch('src/fonts/*', webFont); // change to your source directory
+  //watch('dist/images/*.{jpg,png}', webpImage); // change to your source directory
 }
 
 
@@ -56,6 +65,6 @@ exports.default = series(
   compilescss,
   jsmin,
   optimizeimg,
-  webpImage,
+  webFont,
   watchTask
 );

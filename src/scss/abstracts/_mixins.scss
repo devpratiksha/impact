@@ -68,7 +68,11 @@ Flex order
   align-items: center;
   justify-content: space-around;
 }
-
+@mixin flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 /*********************
 BREAKPOINTS
 *********************/

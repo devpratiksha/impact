@@ -1,0 +1,20 @@
+.#{$prefix}-banner{
+    .learn_more-btn{
+        color: $color_white;
+        padding: 10px 15px;
+        border: 2px solid $color_white;
+        text-transform: uppercase;
+        display: inline-block;
+        font-size: 20px;
+        letter-spacing: 4px;
+        margin-top: 40px;
+        text-align: center;
+        @include transition(0.3s);
+        font-weight: 600;
+        &:hover{
+            background-color: $color_white;
+            color: $color_black;
+        }
+    }
+  
+}
