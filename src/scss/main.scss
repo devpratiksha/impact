@@ -1,0 +1,32 @@
+// abstracts (global variable, function, mixin and placeholder)
+
+@import 'abstracts/fonts';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// vendors (CSS files from external libraries and frameworks)
+
+
+
+// base (boilerplate code)
+
+// @import 'base/reset';
+@import 'base/typography';
+@import 'base/reset';
+
+
+// layout (everything that takes part in laying out the site)
+
+@import 'layout/navigation';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/form';
+@import 'layout/common-layout';
+
+//component
+@import 'components/button';
+
+//page (page-specific styles)
+@import 'page/home';
+
+
