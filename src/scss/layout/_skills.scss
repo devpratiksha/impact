@@ -1,0 +1,36 @@
+.skills-items{
+    background-color: $color_white;
+    padding: 30px 15px 50px;
+    position: relative;
+    margin-top: 40px;
+    h3{
+        margin-bottom: 10px;
+    }
+    .skill-percent{
+        padding: 15px 20px;
+        color: $color_white;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 18px;
+        position: absolute;
+        left: 0;
+        bottom: -30px;
+        z-index: 99;
+    }
+}
+.border-range{
+    height: 4px;
+    background-color: rgba(0,0,0,0.18);
+    display: block;
+    position: relative;
+    z-index: 0;
+    &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 70%;
+        background-color: #202020;
+    }
+}

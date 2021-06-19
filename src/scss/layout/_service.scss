@@ -1,0 +1,36 @@
+.service_items{
+    margin-top: 50px;
+    cursor: pointer;
+    .service_icon{
+        padding: 15px 0;
+        background-color: $color_green;
+        border: 3px solid $color_green;
+        text-align: center;
+        @include transition(0.4s);
+        i{
+            font-size: 36px;
+            color: $color_white;
+            @include transition(0.4s);
+        }
+    }
+    .col-sm-3{
+        padding-right: 0;
+    }
+    .service_details{
+        h4{
+            font-size: $content_size;
+            margin-bottom: 10px;
+        }
+        p{
+            font-weight: 300;
+        }
+    }
+    &:hover{
+        .service_icon{
+            background-color: transparent;
+        }
+        i{
+           color:  $color_green; 
+        }
+    }
+}
